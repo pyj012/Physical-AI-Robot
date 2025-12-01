@@ -1,0 +1,648 @@
+<sdf version="1.7">
+  <model name="BLUE">
+    <link name="base_link">
+      <inertial>
+        <pose>0.005501 0.361118 -0.248414 0 -0 0</pose>
+        <mass>60.5446</mass>
+        <inertia>
+          <ixx>10.5312</ixx>
+          <ixy>6.36987e-16</ixy>
+          <ixz>-1.68777e-18</ixz>
+          <iyy>1.56583</iyy>
+          <iyz>0.446414</iyz>
+          <izz>10.3513</izz>
+        </inertia>
+      </inertial>
+      <collision name="base_link_collision">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="base_link_visual">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="L_shoulder_joint1" type="revolute">
+      <pose relative_to="base_link">0.062883 0.2144 0.98214 1.8342 0 1.5708</pose>
+      <parent>base_link</parent>
+      <child>L_shoulder_link1</child>
+      <axis>
+        <xyz>0 0.5027 0.86446</xyz>
+        <limit>
+          <lower>-3.1416</lower>
+          <upper>1.57</upper>
+          <effort>5.0001</effort>
+          <velocity>5.0001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="L_shoulder_link1">
+      <pose relative_to="L_shoulder_joint1">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.073611 0.068551 0.117883 0 -0 0</pose>
+        <mass>0.811014</mass>
+        <inertia>
+          <ixx>0.00217478</ixx>
+          <ixy>-0.000519613</ixy>
+          <ixz>-0.000893543</ixz>
+          <iyy>0.00282404</iyy>
+          <iyz>-0.000643308</iyz>
+          <izz>0.00209189</izz>
+        </inertia>
+      </inertial>
+      <collision name="L_shoulder_link1_collision">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/L_shoulder_link1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="L_shoulder_link1_visual">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/L_shoulder_link1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="L_shoulder_joint2" type="revolute">
+      <pose relative_to="L_shoulder_link1">0 0.083134 0.14296 -1.5708 -1.3074 1.5708</pose>
+      <parent>L_shoulder_link1</parent>
+      <child>L_shoulder_link2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.3962</lower>
+          <upper>3.1416</upper>
+          <effort>5.0001</effort>
+          <velocity>5.0001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="L_shoulder_link2">
+      <pose relative_to="L_shoulder_joint2">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0.005851 0.013852 0 -0 0</pose>
+        <mass>0.612989</mass>
+        <inertia>
+          <ixx>0.00106391</ixx>
+          <ixy>-4.25942e-21</ixy>
+          <ixz>-2.39098e-20</ixz>
+          <iyy>0.00102745</iyy>
+          <iyz>-4.92704e-05</iyz>
+          <izz>0.0006473</izz>
+        </inertia>
+      </inertial>
+      <collision name="L_shoulder_link2_collision">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/L_shoulder_link2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="L_shoulder_link2_visual">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/L_shoulder_link2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="L_elbow_joint" type="revolute">
+      <pose relative_to="L_shoulder_link2">0 -0.0142 0.02759 -1.57079 1.57079 3.14159</pose>
+      <parent>L_shoulder_link2</parent>
+      <child>L_elbow_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.047</lower>
+          <upper>1.047</upper>
+          <effort>5.0001</effort>
+          <velocity>5.0001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="L_elbow_link">
+      <pose relative_to="L_elbow_joint">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0.02039 0.123668 0 -0 0</pose>
+        <mass>0.522776</mass>
+        <inertia>
+          <ixx>0.00192489</ixx>
+          <ixy>-4.73757e-19</ixy>
+          <ixz>-1.58373e-18</ixz>
+          <iyy>0.00175125</iyy>
+          <iyz>-0.000424759</iyz>
+          <izz>0.00046347</izz>
+        </inertia>
+      </inertial>
+      <collision name="L_elbow_link_collision">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/L_elbow_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="L_elbow_link_visual">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/L_elbow_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="L_arm_joint" type="revolute">
+      <pose relative_to="L_elbow_link">0 0 0.16339 -3.14159 0 -1.5708</pose>
+      <parent>L_elbow_link</parent>
+      <child>L_arm_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.0001</lower>
+          <upper>2.0944</upper>
+          <effort>5.0001</effort>
+          <velocity>5.0001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="L_arm_link">
+      <pose relative_to="L_arm_joint">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.00271 -0 -0.077103 0 -0 0</pose>
+        <mass>0.311975</mass>
+        <inertia>
+          <ixx>0.00110353</ixx>
+          <ixy>-5.04903e-20</ixy>
+          <ixz>-6.27849e-05</ixz>
+          <iyy>0.00107485</iyy>
+          <iyz>-7.88256e-19</iyz>
+          <izz>0.000125549</izz>
+        </inertia>
+      </inertial>
+      <collision name="L_arm_link_collision">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/L_arm_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="L_arm_link_visual">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/L_arm_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="L_wrist_joint1" type="revolute">
+      <pose relative_to="L_arm_link">0.0001 0 -0.152 -1.57079 -1.57079 -3.14159</pose>
+      <parent>L_arm_link</parent>
+      <child>L_wrist_link1</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>5.0001</effort>
+          <velocity>5.0001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="L_wrist_link1">
+      <pose relative_to="L_wrist_joint1">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.0275 -0.001066 0.001875 0 -0 0</pose>
+        <mass>0.0321429</mass>
+        <inertia>
+          <ixx>8.19607e-06</ixx>
+          <ixy>-1.35261e-07</ixy>
+          <ixz>5.46525e-07</ixz>
+          <iyy>2.09881e-05</iyy>
+          <iyz>-6.27899e-08</iyz>
+          <izz>2.42735e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="L_wrist_link1_collision">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/L_wrist_link1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="L_wrist_link1_visual">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/L_wrist_link1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="L_wrist_joint2" type="revolute">
+      <pose relative_to="L_wrist_link1">-0.047 0 -0.00125 7e-06 1.57079 3.14159</pose>
+      <parent>L_wrist_link1</parent>
+      <child>L_wrist_link2</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>5.0001</effort>
+          <velocity>5.0001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="L_wrist_link2">
+      <pose relative_to="L_wrist_joint2">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.000522 -0.022548 0.100977 0 -0 0</pose>
+        <mass>0.507527</mass>
+        <inertia>
+          <ixx>0.00118706</ixx>
+          <ixy>1.97074e-05</ixy>
+          <ixz>-4.474e-05</ixz>
+          <iyy>0.00142153</iyy>
+          <iyz>0.000132494</iyz>
+          <izz>0.000553391</izz>
+        </inertia>
+      </inertial>
+      <collision name="L_wrist_link2_collision">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/L_wrist_link2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="L_wrist_link2_visual">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/L_wrist_link2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="R_shoulder_joint1" type="revolute">
+      <pose relative_to="base_link">-0.086966 0.2144 0.9916 -1.8342 -0 1.5708</pose>
+      <parent>base_link</parent>
+      <child>R_shoulder_link1</child>
+      <axis>
+        <xyz>0 0.5027 -0.86446</xyz>
+        <limit>
+          <lower>-3.1416</lower>
+          <upper>1.57</upper>
+          <effort>5.0001</effort>
+          <velocity>5.0001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="R_shoulder_link1">
+      <pose relative_to="R_shoulder_joint1">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.073611 -0.050284 0.08647 0 -0 0</pose>
+        <mass>0.811014</mass>
+        <inertia>
+          <ixx>0.00217478</ixx>
+          <ixy>0.000519613</ixy>
+          <ixz>-0.000893543</ixz>
+          <iyy>0.00282404</iyy>
+          <iyz>0.000643308</iyz>
+          <izz>0.00209189</izz>
+        </inertia>
+      </inertial>
+      <collision name="R_shoulder_link1_collision">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/R_shoulder_link1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="R_shoulder_link1_visual">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/R_shoulder_link1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="R_shoulder_joint2" type="revolute">
+      <pose relative_to="R_shoulder_link1">0 -0.064867 0.11155 -1.5708 1.3074 1.5708</pose>
+      <parent>R_shoulder_link1</parent>
+      <child>R_shoulder_link2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.3962</lower>
+          <upper>3.1416</upper>
+          <effort>5.0001</effort>
+          <velocity>5.0001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="R_shoulder_link2">
+      <pose relative_to="R_shoulder_joint2">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0.005851 0.013852 0 -0 0</pose>
+        <mass>0.612989</mass>
+        <inertia>
+          <ixx>0.00106391</ixx>
+          <ixy>3.49461e-20</ixy>
+          <ixz>-1.13003e-20</ixz>
+          <iyy>0.00102745</iyy>
+          <iyz>-4.92704e-05</iyz>
+          <izz>0.0006473</izz>
+        </inertia>
+      </inertial>
+      <collision name="R_shoulder_link2_collision">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/R_shoulder_link2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="R_shoulder_link2_visual">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/R_shoulder_link2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="R_elbow_joint" type="revolute">
+      <pose relative_to="R_shoulder_link2">0 -0.0142 0.02759 -1.57079 -1.57079 -3.14159</pose>
+      <parent>R_shoulder_link2</parent>
+      <child>R_elbow_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.047</lower>
+          <upper>1.047</upper>
+          <effort>5.0001</effort>
+          <velocity>5.0001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="R_elbow_link">
+      <pose relative_to="R_elbow_joint">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0.02039 0.123668 0 -0 0</pose>
+        <mass>0.522776</mass>
+        <inertia>
+          <ixx>0.00192489</ixx>
+          <ixy>-2.43554e-19</ixy>
+          <ixz>-7.65603e-19</ixz>
+          <iyy>0.00175125</iyy>
+          <iyz>-0.000424759</iyz>
+          <izz>0.00046347</izz>
+        </inertia>
+      </inertial>
+      <collision name="R_elbow_link_collision">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/R_elbow_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="R_elbow_link_visual">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/R_elbow_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="R_arm_joint" type="revolute">
+      <pose relative_to="R_elbow_link">0 0 0.16339 -3.14159 0 -1.5708</pose>
+      <parent>R_elbow_link</parent>
+      <child>R_arm_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.0001</lower>
+          <upper>2.0944</upper>
+          <effort>5.0001</effort>
+          <velocity>5.0001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="R_arm_link">
+      <pose relative_to="R_arm_joint">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.00271 -0 -0.077103 0 -0 0</pose>
+        <mass>0.311975</mass>
+        <inertia>
+          <ixx>0.00110353</ixx>
+          <ixy>-1.86738e-20</ixy>
+          <ixz>-6.27849e-05</ixz>
+          <iyy>0.00107485</iyy>
+          <iyz>-3.14232e-19</iyz>
+          <izz>0.000125549</izz>
+        </inertia>
+      </inertial>
+      <collision name="R_arm_link_collision">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/R_arm_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="R_arm_link_visual">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/R_arm_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="R_wrist_joint1" type="revolute">
+      <pose relative_to="R_arm_link">0.0001 0 -0.152 -1.57079 -1.57079 -3.14159</pose>
+      <parent>R_arm_link</parent>
+      <child>R_wrist_link1</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>5.0001</effort>
+          <velocity>5.0001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="R_wrist_link1">
+      <pose relative_to="R_wrist_joint1">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.0275 0.001066 0.001875 0 -0 0</pose>
+        <mass>0.0321429</mass>
+        <inertia>
+          <ixx>8.19607e-06</ixx>
+          <ixy>1.35261e-07</ixy>
+          <ixz>5.46525e-07</ixz>
+          <iyy>2.09881e-05</iyy>
+          <iyz>6.27899e-08</iyz>
+          <izz>2.42735e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name="R_wrist_link1_collision">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/R_wrist_link1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="R_wrist_link1_visual">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/R_wrist_link1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="R_wrist_joint2" type="revolute">
+      <pose relative_to="R_wrist_link1">-0.047 0 -0.00125 7e-06 1.57079 3.14159</pose>
+      <parent>R_wrist_link1</parent>
+      <child>R_wrist_link2</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1.57</lower>
+          <upper>1.57</upper>
+          <effort>5.0001</effort>
+          <velocity>5.0001</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name="R_wrist_link2">
+      <pose relative_to="R_wrist_joint2">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.000517 0.02254 0.100966 0 -0 0</pose>
+        <mass>0.507605</mass>
+        <inertia>
+          <ixx>0.00118785</ixx>
+          <ixy>-1.98513e-05</ixy>
+          <ixz>-4.49357e-05</ixz>
+          <iyy>0.00142212</iyy>
+          <iyz>-0.00013287</iyz>
+          <izz>0.000553746</izz>
+        </inertia>
+      </inertial>
+      <collision name="R_wrist_link2_collision">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/R_wrist_link2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="R_wrist_link2_visual">
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://BLUE/meshes/visual/R_wrist_link2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
