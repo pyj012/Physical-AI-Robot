@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="mojiwon">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0482719461989101 0.000171308944523422 0.106246752193616"
+        rpy="0 0 0" />
+      <mass
+        value="2.2553715976141" />
+      <inertia
+        ixx="0.00635085920555909"
+        ixy="-6.39708504207861E-08"
+        ixz="-1.23319294639748E-05"
+        iyy="0.00747889776233451"
+        iyz="-2.91661796929136E-07"
+        izz="0.0126463141552135" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mojiwon/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mojiwon/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_link">
+    <inertial>
+      <origin
+        xyz="-6.245E-16 -1.9429E-16 0.0235"
+        rpy="0 0 0" />
+      <mass
+        value="1.2746" />
+      <inertia
+        ixx="0.0037408"
+        ixy="-1.0842E-19"
+        ixz="3.475E-18"
+        iyy="0.0037408"
+        iyz="-2.3431E-18"
+        izz="0.0070516" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mojiwon/meshes/left_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.49804 0.49804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mojiwon/meshes/left_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0010088 0.14325 0.097944"
+      rpy="-1.5708 -0.85294 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="1"
+      velocity="1" />
+  </joint>
+  <link
+    name="right_link">
+    <inertial>
+      <origin
+        xyz="-2.43403387722996E-15 -1.33226762955019E-15 -0.0234999999865184"
+        rpy="0 0 0" />
+      <mass
+        value="1.27462152376014" />
+      <inertia
+        ixx="0.00374082490658473"
+        ixy="-4.2351647362715E-22"
+        ixz="3.1320924800035E-18"
+        iyy="0.00374082490658472"
+        iyz="3.5349213566865E-18"
+        izz="0.00705158889265268" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mojiwon/meshes/right_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.501960784313725 0.498039215686275 0.498039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mojiwon/meshes/right_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0010088 -0.14275 0.097944"
+      rpy="1.5708 -0.00064676 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="1"
+      velocity="1" />
+  </joint>
+  <link
+    name="lidar_link">
+    <inertial>
+      <origin
+        xyz="0.00829409957033963 -3.05114006976526E-13 0.0107011422227911"
+        rpy="0 0 0" />
+      <mass
+        value="0.146695752131392" />
+      <inertia
+        ixx="6.22721120792819E-05"
+        ixy="1.74376403416964E-15"
+        ixz="1.88658076337422E-05"
+        iyy="0.000109673997590948"
+        iyz="-6.9401490414588E-16"
+        izz="0.000125682524275729" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mojiwon/meshes/lidar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mojiwon/meshes/lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0010088 0.00025196 0.27194"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
