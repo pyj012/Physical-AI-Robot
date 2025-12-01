@@ -1,9 +1,0 @@
-<launch>
-  <!-- 1) 키보드 텔레옵: /cmd_vel 퍼블리시 -->
-  <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py"
-        name="teleop_twist_keyboard" output="screen" />
-
-
-
-</launch>
-
